@@ -1,5 +1,5 @@
 FROM node:lts-alpine
-WORKDIR /usr/orders
+WORKDIR /usr/products
 COPY package.json .
 COPY package-lock.json .
 RUN npm ci
