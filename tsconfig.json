@@ -1,0 +1,27 @@
+{
+  "ts-node": { "files": true },
+  "compilerOptions": {
+    "target": "es6",
+    "module": "es6",
+    "lib": ["dom", "es6"],
+    "resolveJsonModule": true,
+    "outDir": "dist",
+    "rootDir": "src",
+    "baseUrl": "src",
+    "removeComments": true,
+    "strict": true,
+    "moduleResolution": "node",
+    "typeRoots": [      
+      "./node_modules/@types"
+    ],
+    "types": ["node"],
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["**/*.ts"],
+  "exclude": [
+    "node_modules",        
+    "tsconfig.json"    
+  ]
+}
