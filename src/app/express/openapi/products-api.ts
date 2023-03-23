@@ -22,7 +22,7 @@ export const apiDoc = {
         produces: ["application/json"],
         responses: {
           "200": {
-            description: "New order is created",
+            description: "New product is created",
             schema: {
               $ref: "#/definitions/AddProductResponse",
             },
