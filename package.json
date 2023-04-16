@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "build": "tsc --build",
-    "start": "npm run createDb && npm run migrate && nodemon --experimental-specifier-resolution=node dist/app/express/index.js",
+    "start": "npm run createDb && nodemon --experimental-specifier-resolution=node dist/app/express/index.js",
     "start:dev": "nodemon --experimental-specifier-resolution=node --exec ts-node -r tsconfig-paths/register --esm ./src/app/express/index.ts -e ts",
     "test": "echo \"Error: no test specified\" && exit 1",
     "createDb": "npx ts-node --esm ./src/database/createDB.ts",
