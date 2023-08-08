@@ -15,15 +15,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/amitsatpute-gslab/micro-shop-products.git"
+    "url": "git+https://github.com/amitsatpute-pyjs/micro-shop-products.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/amitsatpute-gslab/micro-shop-products/issues"
+    "url": "https://github.com/amitsatpute-pyjs/micro-shop-products/issues"
   },
-  "homepage": "https://github.com/amitsatpute-gslab/micro-shop-products#readme",
+  "homepage": "https://github.com/amitsatpute-pyjs/micro-shop-products#readme",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
