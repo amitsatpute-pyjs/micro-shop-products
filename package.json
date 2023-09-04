@@ -6,11 +6,13 @@
   "type": "module",
   "scripts": {
     "build": "tsc --build",
-    "start": "npm run createDb && npm run migrate && nodemon --experimental-specifier-resolution=node dist/app/express/index.js",
-    "start:dev": "nodemon --experimental-specifier-resolution=node --exec ts-node -r tsconfig-paths/register --esm ./src/app/express/index.ts -e ts",
+    "start": "export $(cat .env) && npm run createDb && npm run migrate && nodemon --experimental-specifier-resolution=node dist/app/express/index.js",
+    "start:dev": "export $(cat .env) && nodemon --experimental-specifier-resolution=node --exec ts-node -r tsconfig-paths/register --esm ./src/app/express/index.ts -e ts",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "createDb": "npx ts-node --esm ./src/database/createDB.ts",
-    "migrate": "npx ts-node --esm ./node_modules/.bin/knex migrate:latest --knexfile ./src/database/knexfile.ts",
+    "createDb": "export $(cat .env) && npx ts-node --esm ./src/database/createDB.ts",
+    "migrate": "export $(cat .env) && npx ts-node --esm ./node_modules/.bin/knex migrate:latest --knexfile ./src/database/knexfile.ts",
+    "createDbPg": "export $(cat .env) && npx ts-node --esm ./src/database/createDbPg.ts",
+    "migratePg": "export $(cat .env) && npx ts-node --esm ./node_modules/.bin/knex migrate:latest --knexfile ./src/database/knexfilePg.ts",
     "@knex": "./node_modules/.bin/knex --knexfile ./src/database/knexfile.ts"
   },
   "repository": {
@@ -28,10 +30,11 @@
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
-    "knex": "^2.4.2",
+    "knex": "^2.5.1",
     "knex-stringcase": "^1.4.6",
     "module-alias": "^2.2.2",
     "mysql": "^2.18.1",
+    "pg": "^8.11.3",
     "swagger-ui-express": "^4.6.2",
     "typescript": "^4.9.5"
   },
@@ -42,6 +45,7 @@
     "@types/knex": "^0.16.1",
     "@types/mysql": "^2.15.21",
     "@types/node": "^18.14.5",
+    "@types/pg": "^8.10.2",
     "@types/swagger-ui-express": "^4.1.3",
     "nodemon": "^2.0.21",
     "ts-node": "^10.9.1",
