@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "build": "tsc --build",
-    "start": "export $(cat .env) && npm run createDb && npm run migratePg && nodemon --experimental-specifier-resolution=node dist/app/express/index.js",
+    "start": "export $(cat .env) && npm run createDbPg && npm run migratePg && nodemon --experimental-specifier-resolution=node dist/app/express/index.js",
     "start:dev": "export $(cat .env) && nodemon --experimental-specifier-resolution=node --exec ts-node -r tsconfig-paths/register --esm ./src/app/express/index.ts -e ts",
     "test": "echo \"Error: no test specified\" && exit 1",
     "createDb": "export $(cat .env) && npx ts-node --esm ./src/database/createDB.ts",
